@@ -1,0 +1,24 @@
+<h1>Modifier Gossip n° <%= @gossip.id %></h1>
+
+<%= form_with(model: @gossip, local: true) do |form| %>
+
+
+
+  <p>
+    <%= form.label :Username %><br>
+    <%= form.text_field :username %>
+  </p>
+
+  <p>
+    <%= form.label :Content %><br>
+    <%= form.text_area :content %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
+<%= link_to 'Clique pour suprimer', @gossip, method: :delete %>
+
+<%= link_to 'Listes des gossips ', gossips_path %>

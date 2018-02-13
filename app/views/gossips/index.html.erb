@@ -1,0 +1,10 @@
+<h1>Listes des Gossips</h1>
+<% @gossips.each do |gossip| %>
+  <p><%= "Auteur : " %> <strong> <%= gossip.moussaillon.username %></strong>
+  <%= "Contenu : "%> <strong> <%= gossip.content.to_s %></strong>
+  <%= "Date de création : "%> <strong> <%= gossip.created_at.to_date %> </strong>
+  <%= link_to "[Lire]", edit_gossip_path(gossip) %>
+  <%= link_to "[Editer]", edit_gossip_path(gossip) %>
+  </p>
+<% end %>
+<p><%= link_to "Créer un gossip", new_gossip_path%></p>
